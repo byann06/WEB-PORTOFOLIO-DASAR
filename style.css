@@ -1,0 +1,30 @@
+*,
+.html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+header {
+  background-color: grey;
+  display: flex;
+  padding: 10px;
+}
+
+ul {
+  display: flex;
+
+  margin-left: 500px;
+}
+
+li {
+  padding: 10px;
+  list-style-type: none;
+}
+
+div{
+    
+}
