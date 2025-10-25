@@ -1,47 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PROJEK 1</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>
-      <h1>Web Portofolio</h1>
-      <nav>
-        <ul>
-          <li>Home</li>
-          <li>Porto</li>
-          <li>Projek</li>
-          <li>e-certificat</li>
-          <li>Contact me hewhe</li>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PROJEK 1</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="">
+  <header>
+    <a href="#">
+      <nav class="flex justify-between  fixed top-0 z-50 w-full bg-blue-800 text-white p-3 shadow-md">
+        <h1>Web Portofolio Byan</h1>
+        <ul type="disc" class="flex gap-2">
+          <li class=" ">
+            <a href="#">Home</a>
+          </li>
+          <li class=" ">
+            <a href="#aboutMe">About Me</a>
+          </li>
+          <li class=" ">
+            <a href="#project">Project</a>
+          </li>
+          <li class=" ">
+            <a href="#portofolio">Portofolio</a>
+          </li>
+          <li class=" ">
+            <a href="#contactMe">Contact Me</a>
+          </li>
+
         </ul>
       </nav>
-    </header>
+    </a>
+  </header>
 
-    <main>
-      <article>
-        <h2>
-          My Project
-          <div>
+
+  <main>
+    <!-- home -->
+    <article class=" mt-10">
+      <div class="mb-10">
+        <section id="home" class="flex flex-col p-3  gap-5">
+          <h2 class="flex justify-center items-center text-4xl gap-2">Home</h2>
+          <div class="flex justify-around">
             <img src="assets/telebg.jpg" alt="projek 1" width="200px" />
             <img src="assets/telebg.jpg" alt="projek 2" width="200px" />
             <img src="assets/telebg.jpg" alt="projek 3" width="200px" />
           </div>
-        </h2>
-      </article>
-      
-      <section>
-        <div>
-            <h2>Portofolio</h2>
-          <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
-          <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
-          <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
-        </div>
-      </section>
+        </section>
+        <section class="flex flex-col p-3  gap-5">
+          <h2 class="flex justify-center items-center text-4xl gap-2"></h2>
+          <div class="flex justify-around">
+            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
+            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
+            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
+          </div>
+        </section>
+      </div>
 
-      <section></section>
-    </main>
-  </body>
+      <!-- aboutme -->
+      <div  id="aboutMe" class="mt-10">
+        <h2  class="flex justify-center items-center text-4xl gap-2 pt-15"><span>About</span> Me</h2>
+        <section class="flex flex-col p-3  gap-5 ">
+          <div class="flex justify-around">
+            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
+            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
+            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
+          </div>
+
+          <div class="flex justify-around">
+            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
+            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
+            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
+          </div>
+        </section>
+      </div>
+     
+      <!-- projek -->
+      <div  id="project" class="mt-10">
+        <h2  class="flex justify-center items-center text-4xl gap-2 pt-15"><span>Project</span> </h2>
+        <section class="flex flex-col p-3  gap-5">
+          <div class="flex justify-around">
+            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
+            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
+            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
+          </div>
+
+          <div class="flex justify-around">
+            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
+            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
+            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
+          </div>
+        </section>
+      </div>
+
+      <!-- Portofolio -->
+      <div  id="portofolio" class="mt-10">
+        <h2  class="flex justify-center items-center text-4xl gap-2 pt-15"><span>Portofolio</span> </h2>
+        <section class="flex flex-col p-3  gap-5">
+          <div class="flex justify-around">
+            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
+            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
+            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
+          </div>
+
+          <div class="flex justify-around">
+            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
+            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
+            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
+          </div>
+        </section>
+      </div>
+
+      <div  id="contactMe" class="mt-10">
+        <h2  class="flex justify-center items-center text-4xl gap-2 pt-15"><span>Contact</span>Me </h2>
+        <section class="flex flex-col p-3  gap-5">
+          <div class="flex justify-around">
+            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
+            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
+            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
+          </div>
+
+          <div class="flex justify-around">
+            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
+            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
+            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
+          </div>
+        </section>
+      </div>
+    </article>
+  </main>
+</body>
+
 </html>
