@@ -1,136 +1,186 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="id">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PROJEK 1</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Code Flow Community - Absensi UKM</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body class="">
-  <header>
-    <a href="#">
-      <nav class="flex justify-between  fixed top-0 z-50 w-full bg-blue-800 text-white p-3 shadow-md">
-        <h1>Web Portofolio Byan</h1>
-        <ul type="disc" class="flex gap-2">
-          <li class=" ">
-            <a href="#">Home</a>
-          </li>
-          <li class=" ">
-            <a href="#aboutMe">About Me</a>
-          </li>
-          <li class=" ">
-            <a href="#project">Project</a>
-          </li>
-          <li class=" ">
-            <a href="#portofolio">Portofolio</a>
-          </li>
-          <li class=" ">
-            <a href="#contactMe">Contact Me</a>
-          </li>
-
-        </ul>
+<body>
+  <!-- AUTH MODAL / PAGES ARE INSIDE #app -->
+  <div id="app">
+    <!-- Top navbar -->
+    <header class="topbar">
+      <div class="brand">Code Flow Community</div>
+      <nav class="topnav">
+        <button id="nav-home" class="nav-btn">Home</button>
+        <button id="nav-about" class="nav-btn">About Us</button>
+        <span id="user-greet" class="user-greet" hidden></span>
+        <button id="btn-logout" class="btn-ghost" hidden>Logout</button>
       </nav>
-    </a>
-  </header>
+    </header>
 
+    <!-- Main layout: sidebar + content -->
+    <main class="container">
+      <!-- Sidebar -->
+      <aside class="sidebar" id="sidebar" hidden>
+        <div class="profile-card">
+          <div id="profile-name">Nama Anggota</div>
+          <small id="profile-prodi">Prodi - Semester</small>
+        </div>
+        <nav class="side-nav">
+          <button data-page="absensi" class="side-link">Absensi</button>
+          <button data-page="jadwal" class="side-link">Jadwal Kegiatan</button>
+          <button data-page="struktur" class="side-link">Struktur Organisasi</button>
+          <button data-page="anggota" class="side-link">Data Anggota</button>
+        </nav>
+      </aside>
 
-  <main>
-    <!-- home -->
-    <article class=" mt-10">
-      <div class="mb-10">
-        <section id="home" class="flex flex-col p-3  gap-5">
-          <h2 class="flex justify-center items-center text-4xl gap-2">Home</h2>
-          <div class="flex justify-around">
-            <img src="assets/telebg.jpg" alt="projek 1" width="200px" />
-            <img src="assets/telebg.jpg" alt="projek 2" width="200px" />
-            <img src="assets/telebg.jpg" alt="projek 3" width="200px" />
+      <!-- Content area -->
+      <section class="content" id="content-area">
+        <!-- Landing / Home -->
+        <section id="page-home" class="page">
+          <h1>Selamat datang di Code Flow Community</h1>
+          <p>Platform absensi & manajemen UKM untuk anggota Code Flow Community.</p>
+
+          <div class="card row">
+            <div>
+              <h3>Fitur</h3>
+              <ul>
+                <li>Login / Daftar / Isi identitas</li>
+                <li>Absensi per pertemuan & riwayat</li>
+                <li>Jadwal kegiatan bulanan</li>
+                <li>Struktur organisasi & data anggota</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Mulai</h3>
+              <p>Silakan <button id="open-login" class="primary">Login / Daftar</button></p>
+            </div>
           </div>
         </section>
-        <section class="flex flex-col p-3  gap-5">
-          <h2 class="flex justify-center items-center text-4xl gap-2"></h2>
-          <div class="flex justify-around">
-            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
-            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
-            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
+
+        <!-- About -->
+        <section id="page-about" class="page" hidden>
+          <h2>About Us</h2>
+          <p>Code Flow Community — komunitas pemrograman untuk berbagi ilmu dan projek.</p>
+        </section>
+
+        <!-- Login / Register pages -->
+        <section id="auth-area" class="page auth" hidden>
+          <div class="auth-box">
+            <div class="auth-tabs">
+              <button id="tab-login" class="tab active">Login</button>
+              <button id="tab-register" class="tab">Daftar</button>
+            </div>
+
+            <form id="form-login" class="auth-form">
+              <label>Email<br /><input type="email" id="login-email" required /></label>
+              <label>Password<br /><input type="password" id="login-pass" required /></label>
+              <div class="auth-actions">
+                <button type="submit" class="primary">Login</button>
+              </div>
+              <small>Belum punya akun? Klik "Daftar".</small>
+            </form>
+
+            <form id="form-register" class="auth-form" hidden>
+              <label>Nama Lengkap<br /><input type="text" id="reg-nama" required /></label>
+              <label>Email<br /><input type="email" id="reg-email" required /></label>
+              <label>Password<br /><input type="password" id="reg-pass" required minlength="6" /></label>
+              <div class="auth-actions">
+                <button type="submit" class="primary">Daftar</button>
+              </div>
+              <small>Setelah daftar akan diarahkan isi identitas lengkap.</small>
+            </form>
           </div>
         </section>
-      </div>
 
-      <!-- aboutme -->
-      <div  id="aboutMe" class="mt-10">
-        <h2  class="flex justify-center items-center text-4xl gap-2 pt-15"><span>About</span> Me</h2>
-        <section class="flex flex-col p-3  gap-5 ">
-          <div class="flex justify-around">
-            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
-            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
-            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
-          </div>
+        <!-- Form identitas setelah register -->
+        <section id="page-identitas" class="page" hidden>
+          <h2>Isi Identitas</h2>
+          <form id="form-identitas" class="card">
+            <label>Nomor Induk / NIM<br /><input id="ident-nim" required /></label>
+            <label>Program Studi<br /><input id="ident-prodi" required /></label>
+            <label>Semester<br /><input id="ident-semester" type="number" min="1" required /></label>
+            <label>Tempat Lahir<br /><input id="ident-tempat" required /></label>
+            <label>Tanggal Lahir<br /><input id="ident-tgl" type="date" required /></label>
+            <label>No. HP (opsional)<br /><input id="ident-phone" /></label>
+            <div class="auth-actions">
+              <button type="submit" class="primary">Simpan Identitas</button>
+            </div>
+          </form>
+        </section>
 
-          <div class="flex justify-around">
-            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
-            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
-            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
+        <!-- Absensi page -->
+        <section id="page-absensi" class="page" hidden>
+          <h2>Absensi</h2>
+          <div class="card">
+            <div class="row spaced">
+              <div>
+                <h3>Riwayat Absensi</h3>
+                <table id="tbl-riwayat">
+                  <thead>
+                    <tr>
+                      <th>Tanggal</th>
+                      <th>Pertemuan</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+              <div>
+                <h3>Pertemuan Selanjutnya</h3>
+                <div id="next-meeting" class="meeting-card">
+                  <p>Tidak ada jadwal terdaftar.</p>
+                </div>
+                <button id="btn-absen-sekarang" class="primary">Absen Sekarang</button>
+              </div>
+            </div>
           </div>
         </section>
-      </div>
-     
-      <!-- projek -->
-      <div  id="project" class="mt-10">
-        <h2  class="flex justify-center items-center text-4xl gap-2 pt-15"><span>Project</span> </h2>
-        <section class="flex flex-col p-3  gap-5">
-          <div class="flex justify-around">
-            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
-            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
-            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
-          </div>
 
-          <div class="flex justify-around">
-            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
-            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
-            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
+        <!-- Jadwal kegiatan -->
+        <section id="page-jadwal" class="page" hidden>
+          <h2>Jadwal Kegiatan (Bulan ini)</h2>
+          <div id="jadwal-list" class="card list"></div>
+        </section>
+
+        <!-- Struktur organisasi -->
+        <section id="page-struktur" class="page" hidden>
+          <h2>Struktur Organisasi</h2>
+          <div id="struktur-cards" class="cards"></div>
+        </section>
+
+        <!-- Data anggota -->
+        <section id="page-anggota" class="page" hidden>
+          <h2>Data Anggota Terdaftar</h2>
+          <div class="card">
+            <table id="tbl-anggota">
+              <thead>
+                <tr>
+                  <th>Nama</th>
+                  <th>Prodi</th>
+                  <th>Semester</th>
+                  <th>TTL</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
           </div>
         </section>
-      </div>
+      </section>
+    </main>
 
-      <!-- Portofolio -->
-      <div  id="portofolio" class="mt-10">
-        <h2  class="flex justify-center items-center text-4xl gap-2 pt-15"><span>Portofolio</span> </h2>
-        <section class="flex flex-col p-3  gap-5">
-          <div class="flex justify-around">
-            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
-            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
-            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
-          </div>
+    <!-- Footer -->
+    <footer class="footer">
+      <small>&copy; <span id="year"></span> Code Flow Community</small>
+    </footer>
+  </div>
 
-          <div class="flex justify-around">
-            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
-            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
-            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
-          </div>
-        </section>
-      </div>
-
-      <div  id="contactMe" class="mt-10">
-        <h2  class="flex justify-center items-center text-4xl gap-2 pt-15"><span>Contact</span>Me </h2>
-        <section class="flex flex-col p-3  gap-5">
-          <div class="flex justify-around">
-            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
-            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
-            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
-          </div>
-
-          <div class="flex justify-around">
-            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
-            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
-            <img src="assets/bgr.jpg" alt="Portofolio 1" width="200px" />
-          </div>
-        </section>
-      </div>
-    </article>
-  </main>
+  <script src="script.js"></script>
 </body>
 
 </html>
