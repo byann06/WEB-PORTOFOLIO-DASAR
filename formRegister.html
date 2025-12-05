@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTER</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="song-wrapper">           
+        <div class="equalizer" id="equalizer">             
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="song-info">
+            <p class="song-title">I Don't Love You</p>
+            <p class="song-artist">My Chemical Romance</p>
+        </div>
+        <button class="play-pause-btn" id="playPauseBtn" type="button">
+            <svg class="play-icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            <svg class="pause-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="6" y="4" width="4" height="16"></rect>
+                <rect x="14" y="4" width="4" height="16"></rect>
+            </svg>
+        </button>
+    </div>
+
+    <div class="container">
+        <h1>FORMULIR REGISTER</h1>
+        <form action="" class="container-form" id="formulir">
+            <!-- input Nama -->
+            <div class="wrapper-nama">
+                <label for=""> Nama Lengkap <span class="required">*</span></label><br>
+                <input class="input" type="text" name="nama" id="nama" placeholder="Masukkan Nama" required>
+                <p class="tutor">Wajib Masukkan nama lengkap disini</p>
+            </div>
+
+            <!-- input email-->
+            <div class="wrapper-email">
+                <label for=""> Email <span class="required">*</span></label><br>
+                <input class="input" type="email" name="email" id="email" placeholder="Masukkan Email" required>
+                <p class="tutor">Gunakan Format yang benar contoh@gmail.com</p>
+            </div>
+
+            <!-- input password-->
+            <div class="wrapper-password">
+                <label for=""> Password <span class="required">*</span></label><br>
+                <input class="input" type="password" name="password" id="password" placeholder="Masukkan Password" required>
+                <p class="tutor">Minimal 8 karakter dengan kombinasi huruf dan angka</p>
+            </div>
+
+            <!-- input Gender-->
+            <div class="wrapper-gender">
+                <label for="">Jenis kelamin</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="laki" name="jenis_kelamin" value="Laki-Laki" required>
+                        <label for="laki">Laki-Laki</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="perempuan" name="jenis_kelamin" value="Perempuan" required>
+                        <label for="perempuan">Perempuan</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- input Prodi-->
+            <div class="wrapper-prodi">
+                <label for=""> Program Studi </label><br>
+                <select class="select" name="Prodi" id="Prodi" required>
+                    <option value="" disabled selected hidden>Pilih Opsi</option>
+                    <option value="si">Sistem Informasi</option>
+                    <option value="pgsd">Pendidikan Guru Sekolah Dasar</option>
+                    <option value="ekonomi">Ekonomi</option>
+                    <b value="bd">Bisnis Digital</option>
+                    <option value="ti">Teknologi Infromasi</option>
+                </select>
+            </div>
+            <!-- tombol -->
+            <button class="button" type="submit">Kirim</button>
+
+            <!-- Syarat ketentuan -->
+            <div class="wrapper-syarat">
+                <input type="checkbox" name="" id="" required>
+                <label for="">Saya menyetujui
+                    <a href="https://files.catbox.moe/1d0pm3.txt" target="blank">syarat dan ketentuan</a> yang berlaku
+                </label>
+            </div>
+        </form>
+    </div>
+
+    <audio id="musik" src="assets/mcr.mp3" autoplay loop></audio>
+    
+    <script>
+        const musik = document.getElementById('musik');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const playIcon = document.querySelector('.play-icon');
+        const pauseIcon = document.querySelector('.pause-icon');
+        const equalizer = document.getElementById('equalizer');
+        
+        
+        let isPlaying = true;
+        
+        
+        playPauseBtn.addEventListener('click', () => {
+            if (isPlaying) {
+                musik.pause();
+                playIcon.classList.remove('hidden');
+                pauseIcon.classList.add('hidden');
+                equalizer.classList.add('paused');
+            } else {
+                musik.play();
+                playIcon.classList.add('hidden');
+                pauseIcon.classList.remove('hidden');
+                equalizer.classList.remove('paused');
+            }
+            isPlaying = !isPlaying;
+        });
+        
+        
+        musik.addEventListener('play', () => {
+            playIcon.classList.add('hidden');
+            pauseIcon.classList.remove('hidden');
+            equalizer.classList.remove('paused');
+            isPlaying = true;
+        });
+        
+       
+        musik.addEventListener('pause', () => {
+            playIcon.classList.remove('hidden');
+            pauseIcon.classList.add('hidden');
+            equalizer.classList.add('paused');
+            isPlaying = false;
+        });
+    </script>
+</body>
+
+</html>
