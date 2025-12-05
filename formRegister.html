@@ -5,13 +5,570 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REGISTER</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: url(assets/bgG.gif) no-repeat center center fixed;
+    background-size: cover;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.container {
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(252, 249, 113);
+    font-size: clamp(1.2rem, 4vh, 2rem);
+    margin-bottom: 1vh;
+}
+
+.container-form {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(100deg, rgba(83, 6, 6, 0.5), rgba(9, 53, 94, 0.5));
+    backdrop-filter: blur(5px);
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    border-radius: 20px;
+    padding: 2vh 3vw;
+    box-shadow: 0 0 30px rgb(114, 14, 14);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.container-form::-webkit-scrollbar {
+    width: 6px;
+}
+
+.container-form::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.container-form::-webkit-scrollbar-thumb {
+    background: rgba(0, 212, 255, 0.5);
+    border-radius: 10px;
+}
+
+.container-form::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 212, 255, 0.8);
+}
+
+.wrapper-nama,
+.wrapper-email,
+.wrapper-password,
+.wrapper-gender,
+.wrapper-prodi {
+    margin: 0.8vh 0;
+    width: 100%;
+}
+
+.wrapper-syarat {
+    margin: 1.5vh 0;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.wrapper-syarat > input[type="checkbox"] {
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.wrapper-syarat > label {
+    color: #ffff;
+    font-size: 11px;
+    line-height: 1.3;
+}
+
+.wrapper-syarat > label > a {
+    color: #00d4ff;
+    text-decoration: underline;
+}
+
+.select {
+    width: 100%;
+    outline: none;
+    padding: 1.2vh 10px;
+    background-color: transparent;
+    color: #00d4ff;
+    border: 2px solid #acacac;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: clamp(13px, 2vh, 16px);
+}
+
+.select > option {
+    background-color: #333;
+    color: #ffffff;
+}
+
+.input {
+    font-weight: 500;
+    width: 100%;
+    border: none;
+    border-bottom: 3px solid #acacac;
+    border-radius: 1px;
+    font-size: clamp(13px, 2vh, 16px);
+    background-color: transparent;
+    outline: none;
+    color: #ffff;
+    padding: 1.2vh 8px;
+    transition: border 0.4s ease-in-out, border-radius 0.4s ease-in-out, padding 0.4s ease-in-out;
+}
+
+.input:focus {
+    border: 3px solid #00d4ff;
+    border-radius: 12px;
+    padding: 12px;
+}
+
+::placeholder {
+    color: rgb(208, 219, 181);
+}
+
+.required {
+    color: red;
+}
+
+.tutor {
+    font-size: clamp(9px, 1.4vh, 13px);
+    color: #e6e1e17e;
+    margin-left: 3px;
+    margin-top: 0.3vh;
+    line-height: 1.2;
+}
+
+label {
+    font-size: clamp(14px, 2.2vh, 18px);
+    color: rgb(188, 240, 67);
+    font-weight: 400;
+    display: inline-block;
+    margin-bottom: 0.3vh;
+}
+
+.radio-group {
+    display: flex;
+    font-size: 20px;
+    color: aqua;
+    gap: 15px;
+    padding: 1vh 0;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.radio-option > input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.radio-option > label {
+    font-size: clamp(13px, 2vh, 16px);
+    color: #ffffff;
+    cursor: pointer;
+    margin: 0;
+}
+
+button {
+    display: flex;
+    flex-direction: column;
+    padding: 1.4vh 20px;
+    font-size: clamp(14px, 2.2vh, 18px);
+    color: #ffff;
+    cursor: pointer;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 300px;
+    align-self: center;
+    justify-self: center;
+    background: transparent;
+    border: 2px solid #00f0ff;
+    position: relative;
+    font-weight: 700;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    margin: 1vh 0;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    left: -50%;
+    top: 90%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(to right, #00f0ff, rgb(7, 9, 112));
+    border-radius: 40%;
+    transform: scaleY(0);
+    transition: all 0.6s ease;
+    z-index: -1;
+}
+
+button:hover::before {
+    transform: scaleY(1);
+    top: 5%;
+}
+
+button:hover {
+    color: yellow;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.song-wrapper {
+    background: transparent;
+    box-shadow: 0px 0px 16px #00f0ff;
+    border: 2px solid #00f0ff;
+    display: flex;
+    padding: 18px 16px;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    border-radius: 10px;
+    gap: 10px;
+}
+
+.play-pause-btn {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #00f0ff, #0080ff);
+    border: 2px solid #00f0ff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    overflow: visible;
+}
+.play-pause-btn::before {
+    display: none;
+}
+
+.play-pause-btn:hover {
+    background: linear-gradient(135deg, #00d4ff, #0066cc);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.6);
+    transform: scale(1.1);
+}
+
+.play-pause-btn:active {
+    transform: scale(0.95);
+}
+.play-pause-btn svg {
+    width: 20px;
+    height: 20px;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.play-icon {
+    padding-left: 2px;
+}
+.hidden {
+    display: none;
+}
+.equalizer {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    height: 30px;
+}
+
+.equalizer .bar {
+    width: 4px;
+    background: #00c851;
+    border-radius: 2px;
+    animation: bounce 1s infinite ease-in-out;
+}
+
+.equalizer.paused .bar {
+    animation: none;
+    height: 5px;
+}
+
+.bar:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.bar:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.bar:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.bar:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+.bar:nth-child(5) {
+    animation-delay: 0.8s;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        height: 5px;
+    }
+
+    50% {
+        height: 25px;
+    }
+}
+
+.song-info {
+    color: white;
+
+}
+
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 1.5vh;
+    }
+    
+    h1 {
+        font-size: clamp(1.1rem, 3.5vh, 1.5rem);
+        margin-bottom: 1vh;
+    }
+    
+    .container-form {
+        padding: 1.5vh 4vw;
+        max-width: 95%;
+        border-radius: 15px;
+    }
+
+    .song-wrapper {
+        gap: 10px;
+        
+        padding: 8px 16px;
+    }
+    .play-pause-btn {
+        width: 35px;
+        height: 35px;
+        min-width: 35px;
+    }
+
+    .play-pause-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .song-title {
+        font-size: 12px;
+    }
+
+    .song-artist {
+        font-size: 10px;
+    }
+
+    .equalizer {
+        height: 20px;
+    }
+
+    .equalizer .bar {
+        width: 2.5px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 1vh;
+    }
+    
+    .container-form {
+        padding: 1.2vh 3vw;
+        max-width: 98%;
+    }
+    
+    .radio-group {
+        gap: 10px;
+    }
+    
+    button {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .song-wrapper {
+        gap: 8px;
+        padding: 6px 12px;
+    }
+    .play-pause-btn {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+    }
+
+    .play-pause-btn svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .song-title {
+        font-size: 11px;
+    }
+
+    .song-artist {
+        font-size: 9px;
+    }
+
+    .equalizer {
+        height: 18px;
+        gap: 2px;
+    }
+
+    .equalizer .bar {
+        width: 2px;
+    }
+
+    @keyframes bounce {
+        0%, 100% {
+            height: 3px;
+        }
+        50% {
+            height: 16px;
+        }
+    }
+}
+
+@media screen and (max-height: 700px) {
+    h1 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5vh;
+    }
+    
+    .container-form {
+        padding: 1vh 3vw;
+        max-height: 94vh;
+    }
+    
+    .wrapper-nama,
+    .wrapper-email,
+    .wrapper-password,
+    .wrapper-gender,
+    .wrapper-prodi {
+        margin: 0.5vh 0;
+    }
+    
+    label {
+        font-size: 14px;
+        margin-bottom: 0.3vh;
+    }
+    
+    .input,
+    .select {
+        padding: 0.8vh 8px;
+        font-size: 13px;
+    }
+    
+    .tutor {
+        font-size: 9px;
+        margin-top: 0.2vh;
+    }
+    
+    button {
+        padding: 1vh 16px;
+        font-size: 14px;
+        margin: 0.5vh 0;
+    }
+    
+    .wrapper-syarat {
+        margin: 0.8vh 0;
+    }
+    
+    .radio-group {
+        padding: 0.5vh 0;
+    }
+    
+    .song-wrapper{
+        
+        background-color: transparent;
+        margin: 0;
+        
+   
+    }
+}
+
+@media screen and (max-height: 600px) {
+    .container-form {
+        max-height: 94vh;
+    }
+    
+    h1 {
+        font-size: 1rem;
+        margin-bottom: 0.3vh;
+    }
+
+    .song-wrapper {
+        padding: 5px 10px;
+        margin-bottom: 0.5vh;
+    }
+
+    .song-title {
+        font-size: 10px;
+    }
+
+    .song-artist {
+        font-size: 8px;
+    }
+
+    .equalizer {
+        height: 16px;
+    }
+}
+
+
+    </style>
 </head>
 
 <body>
